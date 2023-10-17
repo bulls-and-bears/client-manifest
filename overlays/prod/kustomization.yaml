@@ -4,7 +4,7 @@ images:
 - name: /
   newName: /
 - name: client-app
-  newTag: main-0c2f05d77bc57c876e805fc62cbd9da3e5ed866d
+  newTag: client-2e191f2c149b58bdeb05d2bd2617a9ea37ee24ca
 - name: server-app
   newTag: server-4ee574bf3409992827b6b08554728d1c928c7787
 resources:
