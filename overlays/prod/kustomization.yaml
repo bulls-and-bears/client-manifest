@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+  - name: /
+    newName: /
+  - name: client-app
+    newTag: main-68df9eccdf3018e903bba9f19c5fb43a8573de28
+resources:
+  - ../../resources
