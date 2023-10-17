@@ -6,6 +6,6 @@ images:
 - name: client-app
   newTag: main-0c2f05d77bc57c876e805fc62cbd9da3e5ed866d
 - name: server-app
-  newTag: main-c59da6e297bfa2594695eb13d93b37411cfb5e5b
+  newTag: server-4ee574bf3409992827b6b08554728d1c928c7787
 resources:
 - ../../resources
