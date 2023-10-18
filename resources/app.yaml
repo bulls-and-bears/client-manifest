@@ -25,7 +25,8 @@ spec:
                       - ng-3
       containers:
         - name: client-app
-          image: 686710509719.dkr.ecr.ap-northeast-2.amazonaws.com/team-3:20231016161113
+          # 바꿔주기
+          image: 686710509719.dkr.ecr.ap-northeast-2.amazonaws.com/team-3:20231019053524
           imagePullPolicy: IfNotPresent
           # container 자원 설정(변경 가능)
           resources:
@@ -33,7 +34,7 @@ spec:
               cpu: "100m"
               memory: "128Mi"
           ports:
-            - containerPort: 80
+            - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
@@ -47,5 +48,5 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 80
+      port: 3000
       targetPort: 80
