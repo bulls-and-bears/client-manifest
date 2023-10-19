@@ -26,7 +26,7 @@ spec:
       containers:
         - name: client-app
           # 바꿔주기
-          image: 686710509719.dkr.ecr.ap-northeast-2.amazonaws.com/team-3:client-4c06319a41de1f88631c53a5d2b5a20c6fd0837a
+          image: 686710509719.dkr.ecr.ap-northeast-2.amazonaws.com/team-3:client-ddf7017948ef2633443b07738a2c54ff76031984
           imagePullPolicy: IfNotPresent
           # container 자원 설정(변경 가능)
           resources:
