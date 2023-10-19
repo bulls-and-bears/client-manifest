@@ -1,17 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server-app
+  name: client-app
   namespace: team-3
 spec:
-  replicas: 2
+  # client는 replica 1개
+  replicas: 1
   selector:
     matchLabels:
-      app: server-app
+      app: client-app
   template:
     metadata:
       labels:
-        app: server-app
+        app: client-app
     spec:
       affinity:
         nodeAffinity:
@@ -23,9 +24,9 @@ spec:
                     values:
                       - ng-3
       containers:
-        - name: server-app
+        - name: client-app
           # 바꿔주기
-          image: 686710509719.dkr.ecr.ap-northeast-2.amazonaws.com/team-3:server-3c5f8b47d785d718f7a6c16906b8cb071e6e125e
+          image: 686710509719.dkr.ecr.ap-northeast-2.amazonaws.com/team-3:client-4c06319a41de1f88631c53a5d2b5a20c6fd0837a
           imagePullPolicy: IfNotPresent
           # container 자원 설정(변경 가능)
           resources:
@@ -33,19 +34,19 @@ spec:
               cpu: "100m"
               memory: "128Mi"
           ports:
-            - containerPort: 8080
+            - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: server-service
+  name: client-service
   namespace: team-3
 spec:
   type: NodePort
   selector:
-    app: server-app
+    app: client-app
   ports:
     - name: http
       protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 3000
+      targetPort: 3000
