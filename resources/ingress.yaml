@@ -26,4 +26,14 @@ spec:
               service:
                 name: client-service
                 port:
-                  number: 80
+                  number: 3000
+    - host: "app-team-3.shinhansec-pda.net"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: server-service
+                port:
+                  number: 8080
